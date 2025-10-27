@@ -10,7 +10,7 @@ import "@/styles/globals.css";
  
 export const metadata = {
   title: "템플릿 사용 가이드",
-  description: "비개발자들을 위한 템플릿 사용법 안내",
+  description: "아티클 및 이벤트 템플릿 사용법 안내",
 }
  
 const navbar = (
