@@ -1,0 +1,159 @@
+# 색상
+
+템플릿에서 사용할 수 있는 색상 팔레트입니다.
+
+<ColorPreview
+  colors={[
+    { name: "--color-yellow-50", value: "#fff8e2" },
+    { name: "--color-yellow-100", value: "#fcf2cf" },
+    { name: "--color-yellow-200", value: "#fcecb5" },
+    { name: "--color-yellow-300", value: "#fadf87" },
+    { name: "--color-yellow-400", value: "#ffd857" },
+    { name: "--color-yellow-500", value: "#ffcd29" },
+    { name: "--color-yellow-600", value: "#feb519" },
+    { name: "--color-yellow-700", value: "#e89e00" },
+    { name: "--color-yellow-800", value: "#b87e00" },
+    { name: "--color-yellow-900", value: "#9f6c00" },
+  ]}
+  title="노란색 팔레트"
+/>
+
+<ColorPreview
+  colors={[
+    { name: "--color-gray-0", value: "#f8f8f8" },
+    { name: "--color-gray-50", value: "#f4f4f4" },
+    { name: "--color-gray-100", value: "#e2e2e2" },
+    { name: "--color-gray-200", value: "#d7d7d7" },
+    { name: "--color-gray-300", value: "#c1c1c1" },
+    { name: "--color-gray-400", value: "#aaa6a6" },
+    { name: "--color-gray-500", value: "#888686" },
+    { name: "--color-gray-600", value: "#696969" },
+    { name: "--color-gray-700", value: "#4e4e4e" },
+    { name: "--color-gray-800", value: "#353535" },
+    { name: "--color-gray-900", value: "#252525" },
+  ]}
+  title="회색 팔레트"
+/>
+
+<ColorPreview
+  colors={[
+    { name: "--color-blue-50", value: "#edf4ff" },
+    { name: "--color-blue-100", value: "#e2ebfb" },
+    { name: "--color-blue-200", value: "#d2e2fc" },
+    { name: "--color-blue-300", value: "#accafb" },
+    { name: "--color-blue-400", value: "#7ba8f1" },
+    { name: "--color-blue-500", value: "#4e90f9" },
+    { name: "--color-blue-600", value: "#2375f6" },
+    { name: "--color-blue-700", value: "#0a58d3" },
+    { name: "--color-blue-800", value: "#023c98" },
+    { name: "--color-blue-900", value: "#022d71" },
+  ]}
+  title="파란색 팔레트"
+/>
+
+<ColorPreview
+  colors={[
+    { name: "--color-purple-50", value: "#f5f1ff" },
+    { name: "--color-purple-100", value: "#e7e2f4" },
+    { name: "--color-purple-200", value: "#ded5f6" },
+    { name: "--color-purple-300", value: "#c6b5f6" },
+    { name: "--color-purple-400", value: "#a78af7" },
+    { name: "--color-purple-500", value: "#895ffc" },
+    { name: "--color-purple-600", value: "#7240fe" },
+    { name: "--color-purple-700", value: "#5227c9" },
+    { name: "--color-purple-800", value: "#380dad" },
+    { name: "--color-purple-900", value: "#280e6e" },
+  ]}
+  title="보라색 팔레트"
+/>
+
+<ColorPreview
+  colors={[
+    { name: "--color-green-50", value: "#eafdf3" },
+    { name: "--color-green-100", value: "#d7f4e5" },
+    { name: "--color-green-200", value: "#b5ebce" },
+    { name: "--color-green-300", value: "#90deb4" },
+    { name: "--color-green-400", value: "#4ccf89" },
+    { name: "--color-green-500", value: "#0db45b" },
+    { name: "--color-green-600", value: "#009d49" },
+    { name: "--color-green-700", value: "#00803c" },
+    { name: "--color-green-800", value: "#015d2c" },
+    { name: "--color-green-900", value: "#004420" },
+  ]}
+  title="초록색 팔레트"
+/>
+
+<ColorPreview
+  colors={[
+    { name: "--color-red-50", value: "#ffedef" },
+    { name: "--color-red-100", value: "#fee1e5" },
+    { name: "--color-red-200", value: "#ffbcc4" },
+    { name: "--color-red-300", value: "#fe8d9b" },
+    { name: "--color-red-400", value: "#fc6174" },
+    { name: "--color-red-500", value: "#f04459" },
+    { name: "--color-red-600", value: "#e62f45" },
+    { name: "--color-red-700", value: "#d21f35" },
+    { name: "--color-red-800", value: "#aa182a" },
+    { name: "--color-red-900", value: "#8d1624" },
+  ]}
+  title="빨간색 팔레트"
+/>
+
+<ColorPreview
+  colors={[
+    { name: "--color-orange-50", value: "#fff0ea" },
+    { name: "--color-orange-100", value: "#fde1d5" },
+    { name: "--color-orange-200", value: "#fdcbb7" },
+    { name: "--color-orange-300", value: "#fbac8d" },
+    { name: "--color-orange-400", value: "#ff8e61" },
+    { name: "--color-orange-500", value: "#fa6c34" },
+    { name: "--color-orange-600", value: "#f55719" },
+    { name: "--color-orange-700", value: "#d8470e" },
+    { name: "--color-orange-800", value: "#b54012" },
+    { name: "--color-orange-900", value: "#98360f" },
+  ]}
+  title="주황색 팔레트"
+/>
+
+### 사용 방법
+
+팔레트에 있는 색으로 배경색이나 텍스트 색상을 변경할 때에는 다음과 같은 방식을 사용합니다.
+
+```tsx
+/* 배경 색상 */
+<div class="box bg-red-50">박스</div>;
+
+/* 텍스트 색상 */
+<p class="text-red-500">텍스트</p>;
+```
+<br/>
+
+<Container>
+  <Article>
+    <Box className="bg-red-50 w-full">박스</Box>
+  </Article>
+  <p className="text-red-500">텍스트</p>
+</Container>
+
+그 외의 색을 사용하고 싶다면 직접 색상 컬러 코드를 지정합니다.
+
+```tsx
+/* 배경 색상 */
+<div class="box bg-[#d2e2fc]">박스</div>;
+
+/* 텍스트 색상 */
+<p class="text-[#004420]">텍스트</p>;
+```
+<br/>
+
+<Container>
+  <Article>
+    <Box className="bg-[#d2e2fc] w-full">박스</Box>
+  </Article>
+  <p className="text-[#004420]">텍스트</p>
+</Container>
+
+### 사용 팁
+
+- 배경색은 일반적으로 `bg-[color]-50` 컬러를 사용하면 적절합니다.
+- 하이라이트 색상은 일반적으로 `bg-[color]-500`, `text-[color]-500`을 많이 사용합니다.
