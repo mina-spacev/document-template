@@ -2,11 +2,11 @@ import { Article } from "./template";
 
 type Props = {
   code: string;
-  article?: boolean;
+  type?: "article" | "event";
 };
 
-export const Example = ({ article = true, code }: Props) => {
-  if (article) {
+export const Example = ({ type = "article", code }: Props) => {
+  if (type === "article") {
     return (
       <div className="bg-white border rounded-lg p-4 @container">
       <Article>
