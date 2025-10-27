@@ -1,0 +1,228 @@
+
+# 템플릿 및 작성 가이드
+
+## 템플릿
+
+### 헤더
+
+- 카테고리, 제목, 날짜를 작성할 수 있습니다.
+- `dateTime`에는 `yyyy-MM-dd` 형식을, `date`에는 `yyyy년 m월 dd일` 형식을 사용해 날짜를 기입합니다.
+
+```tsx
+<header>
+  <p class="highlight">{category}</p>
+  <h1>{title}</h1>
+  <time dateTime={dateTime}>{date}</time>
+</header>
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: `<header>
+    <p class="highlight">단기임대 탐방기</p>
+    <h1>출장 왔다가 힐링하고 가는 서울 마포구 오피스텔</h1>
+    <time dateTime="2025-09-25">2025년 9월 25일</time>
+  </header>`,
+      description: "헤더",
+    },
+  ]}
+  title=""
+/>
+
+### 목차
+
+- 페이지의 목차를 작성할 수 있습니다.
+- 목차를 작성하는 경우 각 섹션에 해당 영역을 식별할 수 있는 고유한 값을 `id`로 지정하고,
+  <br/>
+  동일한 값을 `a` 태그의 `href`에도 지정하면 클릭 시 해당 영역으로 이동합니다.
+- `id` 값은 `guest-interview`와 같은 형식으로 작성합니다.
+  <br/>
+  `guest_interview` (X)
+
+```tsx
+<div class="box">
+  <h3>{subtitle}</h3>
+  <ul>
+    <li>
+      <a href={sectionA} class="underline">
+        {text}
+      </a>
+    </li>
+    <li>
+      <a href={sectionB} class="underline">
+        {text}
+      </a>
+    </li>
+  </ul>
+</div>
+
+<section id={sectionA}>
+  <h2 class="highlight">
+    {title}
+  </h2>
+</section>
+
+<section id={sectionB}>
+  <h2 class="highlight">
+    {title}
+  </h2>
+</section>
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: `<div class="box bg-gray-50">
+    <h3>호스트의 솔직한 인터뷰</h3>
+    <ul>
+      <li>
+        <a href="#officetel" class="underline">
+          공원과 한강이 있는 마포구 오피스텔
+        </a>
+      </li>
+      <li>
+        <a href="#33m2-first-meeting" class="underline">
+          삼삼엠투와의 첫 만남
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <section id="officetel">
+    <h2 class="highlight">
+      공원과 한강이 있는 마포구 오피스텔
+    </h2>
+  </section>
+
+  <section id="33m2-first-meeting">
+    <h2 class="highlight">
+      삼삼엠투와의 첫 만남
+    </h2>
+  </section>
+`, description: "목차와 섹션", }, ]} title="" />
+
+### Q&A
+
+- Q&A 형식으로 내용을 작성할 때 사용합니다.
+
+```tsx
+<div class="qna">
+  <strong>Q. {text}</strong>
+  <p>{text}</p>
+</div>
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: `<div class="qna">
+    <strong>
+      Q. 삼삼엠투는 어떻게 알게 되셨나요?
+    </strong>
+    <p>
+      출장 이야기를 하다가 친구에게서 처음 '단기임대'라는 개념을
+      들었어요. 그 후 직접 인터넷에 '단기임대'라고 검색해보니 삼삼엠투가
+      나와서 사이트를 접하게 됐습니다.
+    </p>
+  </div>`,
+      description: "Q&A",
+    },
+  ]}
+  title=""
+/>
+
+### 푸터
+
+- 아티클의 꼬리말에 해당하는 부분으로, 페이지의 내용을 모두 작성한 후 가장 하단에 작성합니다.
+
+```tsx
+<footer>
+  <hr/>
+
+  <p class="footnote">
+    *본 콘텐츠의 내용은 0000년 00월 00일 기준으로 작성되었으며, 이후 변동사항이
+    생길 수 있습니다.
+  </p>
+</footer>
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: `<footer>
+    <hr/>
+
+    <p class="footnote">
+      *본 콘텐츠의 내용은 2025년 9월 25일 기준으로 작성되었으며, 이후 변동사항이 생길 수 있습니다.
+    </p>
+  </footer>`,
+      description: "푸터",
+    },
+  ]}
+  title=""
+/>
+
+## 작성 가이드
+
+기본적인 틀은 아래와 같습니다.
+
+```tsx
+<article style="--highlight-color: #4e90f9;">
+  <header>
+    <p class="highlight">{category}</p>
+    <h1>{title}</h1>
+    <time dateTime={date}>{date}</time>
+  </header>
+
+  <main>
+    <section>
+      {content}
+    </section>
+
+    <section>
+      {content}
+    </section>
+
+  <footer>
+    <hr/>
+
+    <p class="footnote">
+      *본 콘텐츠의 내용은 0000년 00월 00일 기준으로 작성되었으며, 이후
+      변동사항이 생길 수 있습니다.
+    </p>
+  </footer>
+</article>
+```
+
+- `article`은 가장 상단에 넣는 태그로, 페이지의 하이라이트 컬러를 지정할 수 있습니다.
+  <br/>
+  지정한 컬러는 해당 페이지의 포인트 색상으로 사용되며, `highlight` 클래스를 넣는 곳에 적용됩니다.
+- 색상 코드 또는 정의된 컬러 토큰을 작성하면 됩니다.
+
+```tsx
+/* 색상 코드 지정 */
+<article style="--highlight-color: #4e90f9;">
+
+/* 컬러 토큰 활용 */
+<article style="--highlight-color: var(--color-blue-500);">
+```
+
+- `article` 태그 안에는 `header`, `main`, `footer`를 순서대로 작성합니다.
+- `main` 안에는 `section` 태그를 넣어 컨텐츠 영역을 분리할 수 있습니다.
+  <br/>
+  섹션 사이에는 더 많은 여백을 넣어주고 있어 화면에서도 영역이 구분됨을 확인할 수 있습니다.
+- `section` 태그 안에는 가이드의 `Element`에 작성된 요소들을 활용해 실제 컨텐츠를 작성합니다.
+  필요한 경우 `hr` 태그를 넣어 구분선을 넣어주어도 좋습니다.
+
+```tsx
+<section>
+  {content}
+</section>
+
+<hr/>
+
+<section>
+  {content}
+</section>
+```
