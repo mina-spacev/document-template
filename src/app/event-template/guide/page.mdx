@@ -1,0 +1,152 @@
+import Image from "next/image";
+
+# 템플릿 및 작성 가이드
+
+## 템플릿
+
+### 이미지
+
+이벤트 이미지를 추가합니다.
+
+```tsx
+<img src={image} alt={description} />
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: `<img
+    src="https://d1pviohoskiraj.cloudfront.net/landing-html/c1ca6f53-3c54-422c-a90c-97aadbd9bff3.png"
+    alt="헤더"
+  />`,
+      description: "이미지",
+    },
+  ]}
+  title=""
+  type="event"
+/>
+
+### 하단 고정 배너
+
+페이지 하단에 고정될 배너를 생성합니다.
+
+- `src` : 이미지의 링크를 작성합니다.
+- `alt` : 이미지를 설명할 수 있는 단어 또는 문장을 작성합니다.
+- `href`: 이동할 URL 주소를 작성합니다.
+- `target="_blank"`: 새 탭에서 창을 열도록 설정합니다.
+- `span` 태그 안에 어떤 동작을 하는 링크인지에 대한 설명을 작성합니다.
+
+```tsx
+<div class="fixed-banner">
+  <a href={link} class="link" target="_blank">
+    <img src={image} alt={description} />
+    <span class="sr-only">{description}</span>
+  </a>
+</div>
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: `<div class="fixed-banner">
+    <a
+      href="https://tally.so/r/wdj1rK"
+      class="link"
+      target="_blank"
+    >
+      <img
+        src="https://d1pviohoskiraj.cloudfront.net/landing-html/5e48fe44-f528-4d26-bf0c-d3472d5d69ba.png"
+        alt="상품권 받으러 가기 버튼"
+      />
+      <span class="sr-only">상품권 받으러 가기</span>
+    </a>
+  </div>`,
+      description: "배너",
+    },
+  ]}
+  title=""
+  type="event"
+/>
+
+### 링크
+
+페이지 본문에 들어갈 링크를 생성합니다.
+
+- 내부에 들어가는 이미지는 기본적으로 전체 너비(700px) 크기만큼의 크기를 가집니다.
+  <br />좀 더 작게 표시하고 싶다면 `width: 100%`의 비율을 수정해가며 원하는
+  크기로 수정 가능합니다.
+
+```tsx
+<a href={link} target="_blank" class="link">
+  <img src={image} alt={description} style="width: 100%;" />
+  <span class="sr-only">{description}</span>
+</a>
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: `<a href="https://33m2.co.kr/download" target="_blank" class="link">
+    <img
+      src="https://d1pviohoskiraj.cloudfront.net/landing-html/42029de4-ec02-4cea-88d3-a7f9860b53ff.png"
+      alt="스토어 이동 버튼"
+      style="width: 82%;"
+    />
+    <span class="sr-only">스토어로 이동하기</span>
+  </a>`,
+      description: "배너",
+    },
+  ]}
+  title=""
+  type="event"
+/>
+
+#### 이미지 크기 실시간으로 수정하기
+
+1. 개발자 도구를 켭니다.
+
+- 윈도우 : `F12`
+- 맥 : `CMD` + `OPTION` + `i`
+
+2. 사진에 표시된 버튼을 클릭한 후 페이지에서 크기를 확인하고 싶은 이미지를 클릭합니다.
+
+<Image
+  src="/developer-tool.png"
+  alt="개발자 도구 버튼 이미지"
+  width="500"
+  height="300"
+/>
+
+3. 사진에 표시된 `width` 비율을 원하는 대로 변경한 후 화면에서 확인합니다.<br/>
+   위, 아래 방향키를 사용하거나 더블클릭하여 직접 숫자를 입력할 수 있습니다.
+
+<Image src="/change-width.png" alt="width 속성 위치" width="600" height="300" />
+
+## 작성 가이드
+
+기본적인 틀은 아래와 같습니다.
+
+```tsx
+<div class="event">
+  <div class="fixed-banner">
+    <a href={link} class="link" target="_blank">
+      <img src={image} alt={description} />
+      <span class="sr-only">{description}</span>
+    </a>
+  </div>
+
+  <img src={image} alt={description} />
+  <a href={link} target="_blank" class="link">
+    <img src={image} alt={description} style="width: 100%;" />
+    <span class="sr-only">{description}</span>
+  </a>
+  <img src={image} alt={description} />
+</div>
+```
+
+- `event` 클래스를 포함한 `div` 태그를 가장 상단에 작성합니다.
+- 필요한 이벤트 이미지를 쭉 나열합니다.
+- 링크가 필요한 경우 템플릿을 참고해 추가할 수 있습니다.
+- 하단 고정 배너가 필요한 경우 템플릿을 참고해 추가할 수 있습니다.<br/>
+  항상 페이지 하단에 위치하므로 템플릿 상에서는 `event` 클래스의 `div` 안에 위치하기만 하면 상관없으나,<br/>
+  구분을 위해 가장 상단 또는 하단에 두는 것을 추천합니다.
