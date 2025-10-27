@@ -1,0 +1,120 @@
+# 텍스트
+
+텍스트 요소들을 사용하여 콘텐츠를 작성할 수 있습니다.
+
+### 헤딩 (제목)
+
+각 문단의 제목, 부제목을 작성할 때 사용합니다.
+
+```tsx copy
+/* 색상 강조 제목 */
+<h2 class="highlight">{title}</h2>
+```
+
+```tsx copy
+/* 일반 제목 */
+<h2>{title}</h2>
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: '<h2 class="highlight">공원과 한강이 있는 마포구 오피스텔</h2>',
+      description: "색상 강조 제목",
+    },
+    {
+      code: "<h2>공원과 한강이 있는 마포구 오피스텔</h2>",
+      description: "일반 제목",
+    },
+  ]}
+  title="제목"
+/>
+
+```tsx copy
+/* 색상 강조 부제목 */
+<h3 class="highlight">{title}</h3>
+```
+
+```tsx copy
+/* 일반 부제목 */
+<h3>{title}</h3>
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: '<h3 class="highlight">공원과 한강이 있는 마포구 오피스텔</h3>',
+      description: "색상 강조 부제목",
+    },
+    {
+      code: "<h3>공원과 한강이 있는 마포구 오피스텔</h3>",
+      description: "일반 부제목",
+    },
+  ]}
+  title="부제목"
+/>
+
+### 문단 (본문)
+
+일반적인 텍스트 내용을 작성할 때 사용합니다.
+
+```tsx copy
+/* 일반 텍스트 */
+<p>{title}</p>
+```
+
+```tsx copy
+/* 캡션 텍스트 */
+<p class="caption">{title}</p>
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: "<p>서울 마포구는 아름다운 한강과 월드컵경기장, 서울 제3의 번화가라고 할 수 있는 젊음의 성지 홍대거리까지 다양한 매력을 지닌 지역입니다.</p>",
+      description: "일반 텍스트",
+    },
+    {
+      code: '<p class="caption">*상기 계약 조건은 영상 촬영일 기준이며, 추후 변동될 수 있습니다.</p>',
+      description: "캡션 텍스트",
+    },
+  ]}
+/>
+
+### 강조 텍스트
+
+중요한 내용을 강조할 때 사용합니다.
+
+```tsx copy
+/* 강조 */
+<strong>{text}</strong>
+```
+
+```tsx copy
+/* 텍스트 색상 강조 */
+<strong class="highlight">{text}</strong>
+```
+
+```tsx copy
+/* 배경 색상 강조 */
+<strong class="bg-highlight">{text}</strong>
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: "<p>상암동의 경우 DMC를 중심으로 미디어, 엔터테인먼트 기업이 몰려 있어서 <strong>디지털 미디어 산업에 종사하고 있는 직장인 분들의 출장이 많은 곳이죠.</strong></p>",
+      description: "강조",
+    },
+    {
+      code: '<p>상암동의 경우 DMC를 중심으로 미디어, 엔터테인먼트 기업이 몰려 있어서 <strong class="highlight">디지털 미디어 산업에 종사하고 있는 직장인 분들의 출장이 많은 곳이죠.</strong></p>',
+      description: "텍스트 색상 강조",
+    },
+    {
+      code: '<p>상암동의 경우 DMC를 중심으로 미디어, 엔터테인먼트 기업이 몰려 있어서 <strong class="bg-highlight">디지털 미디어 산업에 종사하고 있는 직장인 분들의 출장이 많은 곳이죠.</strong></p>',
+      description: "텍스트 색상 강조",
+    },
+  ]}
+  title=""
+  highlight="#ffcd29"
+/>

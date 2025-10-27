@@ -1,0 +1,80 @@
+import Image from 'next/image'
+
+# 유튜브
+
+YouTube 동영상을 콘텐츠에 포함할 때 사용합니다.
+
+- `src` : YouTube 영상 주소를 작성합니다.
+- `title` : 해당 영상을 설명할 수 있는 문구를 작성합니다. (ex. 제목)
+
+```tsx copy
+/* 영상 삽입 */
+<div class="video">
+  <iframe
+    src={youtube}
+    title={title}
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+  ></iframe>
+</div>
+```
+
+```tsx copy
+/* 영상 삽입 및 하단 설명 */
+<div class="video">
+  <iframe
+    src={youtube}
+    title={title}
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+  ></iframe>
+  <p>
+    {caption}
+  </p>
+</div>
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: `<div class="video">
+    <iframe
+      src="https://www.youtube.com/embed/Xe1atmnsrq4"
+      title="삼삼엠투 서울 마포구 6평 오피스텔 룸투어ㅣ단기임대 탐방기 EP.2"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>`,
+      description: "영상 삽입",
+    },
+        {
+      code: `<div class="video">
+    <iframe
+      src="https://www.youtube.com/watch?v=Xe1atmnsrq4"
+      title="삼삼엠투 서울 마포구 6평 오피스텔 룸투어ㅣ단기임대 탐방기 EP.2"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+    <p>
+      *단기임대 탐방기 EP.2 서울 마포구 오피스텔 편을 유튜브 영상을 통해 먼저 만나보세요.
+      <br/>
+      더욱 생생하고 상세한 이야기를 확인할 수 있습니다.
+    </p>
+  </div>`,
+      description: "영상 삽입 및 하단 설명",
+    },
+  ]}
+  title=""
+/>
+
+### YouTube 영상 주소 가져오기
+
+1. YouTube 영상에서 '공유' 버튼 클릭
+2. '퍼가기' 버튼 클릭
+3. src 영역 중 `?` 전까지 복사 (https://www.youtube.com/embed/XXXXX)
+
+<Image src="/youtube-link.png" alt="유튜브 영상 링크" width="300" height="300" />

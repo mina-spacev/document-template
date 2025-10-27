@@ -1,0 +1,57 @@
+# 리스트
+
+항목을 나열할 때 사용합니다.
+
+### 순서 없는 목록 (Unordered List)
+
+순서가 중요하지 않은 항목들을 나열할 때 사용합니다.
+
+```tsx copy
+<ul>
+  <li>{text}</li>
+  <li>{text}</li>
+</ul>
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: `<ul>
+    <li>지하철 2호선 홍대입구역 도보 5분</li>
+    <li>지하철 6호선 상수역 도보 3분</li>
+    <li>버스 정류장 도보 2분</li>
+    <li>주차장 완비 (유료)</li>
+  </ul>`,
+      description: "순서 없는 목록",
+    },
+  ]}
+  title=""
+/>
+
+### 순서 있는 목록 (Ordered List)
+
+단계별로 진행되는 내용이나 순서가 중요한 항목들을 나열할 때 사용합니다.
+
+```tsx copy
+/* 순서 있는 목록 */
+<ol>
+  <li>{text}</li>
+  <li>{text}</li>
+  <li>{text}</li>
+</ol>
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: `<ol>
+    <li>홍대입구역 2번 출구로 나와서 직진</li>
+    <li>홍익대학교 방향으로 200m 이동</li>
+    <li>CU 편의점을 지나 첫 번째 골목으로 우회전</li>
+    <li>50m 직진 후 왼쪽 건물 3층</li>
+  </ol>`,
+      description: "순서 있는 목록",
+    },
+  ]}
+  title=""
+/>

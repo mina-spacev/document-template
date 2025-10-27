@@ -1,0 +1,86 @@
+# 이미지
+
+이미지를 사용하여 시각적 콘텐츠를 추가할 수 있습니다.
+
+- `src` : 이미지의 링크를 작성합니다.
+- `alt` : 이미지를 설명할 수 있는 단어 또는 문장을 작성합니다.
+
+### 단일 이미지
+
+하나의 이미지를 표시합니다.
+
+```tsx copy
+/* 썸네일 이미지 */
+<img src={image} alt={description} class="thumbnail" />
+```
+
+```tsx copy
+/* 일반 이미지 */
+<img src={image} alt={description} />
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: '<img src="https://d1pviohoskiraj.cloudfront.net/landing-html/9b451900-afed-4129-a098-7a8ab747b0eb.png" alt="출장 왔다가 힐링하고 가는 서울 마포구 오피스텔" className="thumbnail" />',
+      description: '썸네일 이미지'
+    },
+    {
+      code: '<img src="https://d1pviohoskiraj.cloudfront.net/landing-html/e11f62b8-cf3e-416d-808b-0ba930e72cd4.png" alt="마포구 오피스텔 방 사진" />',
+      description: '일반 이미지'
+    }
+  ]}
+  title=""
+/>
+
+### 이미지 리스트
+
+두 장의 이미지를 표시합니다.
+PC 환경에서는 가로로, 모바일 환경에서는 세로로 배열됩니다.
+
+```tsx copy
+<div class="image-list">
+  <img src={image} alt={text} />
+  <img src={image} alt={text} />
+</div>
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: '<div class="image-list">\n  <img src="https://d1pviohoskiraj.cloudfront.net/landing-html/e11f62b8-cf3e-416d-808b-0ba930e72cd4.png" alt="마포구 오피스텔 방 첫번째 사진" />\n  <img src="https://d1pviohoskiraj.cloudfront.net/landing-html/98836a13-90e5-4fd3-87a7-ae30d9b7b7c7.png" alt="마포구 오피스텔 방 두번째 사진" />\n</div>',
+      description: '이미지 리스트'
+    }
+  ]}
+  title=""
+/>
+
+### 이미지 (캡션 포함)
+
+이미지와 함께 이미지에 대한 설명을 화면에 표시합니다.
+
+```tsx copy
+<figure>
+  <img src={image} alt={text} />
+  <figcaption>{caption}</figcaption>
+</figure>
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: '<figure>\n  <img src="https://d1pviohoskiraj.cloudfront.net/landing-html/e11f62b8-cf3e-416d-808b-0ba930e72cd4.png" alt="마포구 오피스텔 방 첫번째 사진" />\n  <figcaption>마포구 오피스텔 내부 사진</figcaption>\n</figure>',
+      description: '단일 이미지'
+    },
+    {
+      code: '<figure>\n  <img src="https://d1pviohoskiraj.cloudfront.net/landing-html/e11f62b8-cf3e-416d-808b-0ba930e72cd4.png" alt="마포구 오피스텔 방 첫번째 사진" />\n  <img src="https://d1pviohoskiraj.cloudfront.net/landing-html/98836a13-90e5-4fd3-87a7-ae30d9b7b7c7.png" alt="마포구 오피스텔 방 두번째 사진" />\n  <figcaption>마포구 오피스텔 내부 사진</figcaption>\n</figure>',
+      description: '여러 이미지'
+    }
+  ]}
+  title=""
+/>
+
+### 사용 팁
+
+- **alt 속성**: 이미지에 대한 적절한 설명을 작성해주세요.
+- **캡션**: 이미지의 내용을 설명하거나 출처를 작성할 필요가 있을 경우 사용합니다.

@@ -1,0 +1,29 @@
+# 하이라이트 박스
+
+중요한 정보를 강조하여 표시하는 박스입니다.
+
+### 템플릿
+
+```tsx
+<div class="box bg-[color]-50">
+  <h3>{title}</h3>
+  <div>{text}</div>
+</div>
+```
+
+### 색상 변경
+
+원하는 배경 색상을 팔레트에 있는 색상 또는 색상 코드로 지정합니다.
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: '<div class="box bg-orange-50">\n  <h3>✅ 중요한 공지사항</h3>\n  <div>이 내용은 사용자가 반드시 확인해야 하는 중요한 정보입니다.</div>\n</div>',
+      description: "컬러 토큰",
+    },
+    {
+      code: '<div class="box bg-[#edf4ff]">\n  <h3>✅ 중요한 공지사항</h3>\n  <div>이 내용은 사용자가 반드시 확인해야 하는 중요한 정보입니다.</div>\n</div>',
+      description: "색상 코드",
+    },
+  ]}
+/>
