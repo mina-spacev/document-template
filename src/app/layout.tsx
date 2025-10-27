@@ -1,50 +1,44 @@
+import { ReactNode } from 'react';
+import { ToastContainer } from 'react-toastify';
 import { Footer, Layout, Navbar } from 'nextra-theme-docs'
-import { Banner, Head } from 'nextra/components'
+import { Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import { pretendard } from "@/styles/font";
+
 import 'nextra-theme-docs/style.css'
 import "@/styles/globals.css";
-import { ReactNode } from 'react';
  
 export const metadata = {
-  title: "Document Template",
-  description: "Document Template",
+  title: "템플릿 사용 가이드",
+  description: "비개발자들을 위한 템플릿 사용법 안내",
 }
  
-const banner = <Banner storageKey="some-key">Nextra 4.0 is released 🎉</Banner>
 const navbar = (
   <Navbar
-    logo={<b>Nextra</b>}
-    // ... Your additional navbar options
+    logo={<b>템플릿 가이드</b>}
   />
 )
-const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>
+const footer = <Footer>템플릿 사용 가이드 © {new Date().getFullYear()}</Footer>
  
 export default async function RootLayout({ children }: Readonly<{
   children: ReactNode
 }>) {
   return (
     <html
-      // Not required, but good for SEO
-      lang="en"
-      // Required to be set
+      lang="ko"
       dir="ltr"
-      // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
       suppressHydrationWarning
     >
-      <Head
-      // ... Your additional head options
-      >
-        {/* Your additional tags should be passed as `children` of `<Head>` element */}
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <body className={pretendard.className}>
+        <ToastContainer toastClassName="min-w-[335px] w-auto! min-h-[52px]! bg-black/80! font-medium! text-white! typo-label1 p-4!" hideProgressBar closeButton={false} />
         <Layout
-          banner={banner}
           navbar={navbar}
           pageMap={await getPageMap()}
-          docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs"
+          docsRepositoryBase="https://github.com/your-username/document-template"
           footer={footer}
-          // ... Your additional layout options
         >
           {children}
         </Layout>
