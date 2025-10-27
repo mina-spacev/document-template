@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Article } from "./template";
+import { cleanInlineWhitespace } from "@/lib/whitespace";
 
 type CodeExample = {
   code: string;
@@ -119,13 +120,13 @@ export const DynamicCodeBlock = ({
           <Article padding={padding} highlight={highlight}>
             <div
               className="prose max-w-none"
-              dangerouslySetInnerHTML={{ __html: currentExample.code }}
+              dangerouslySetInnerHTML={{ __html: cleanInlineWhitespace(currentExample.code) }}
             />
           </Article>
         ) : (
           <div
             className="prose max-w-none"
-            dangerouslySetInnerHTML={{ __html: currentExample.code }}
+            dangerouslySetInnerHTML={{ __html: cleanInlineWhitespace(currentExample.code) }}
           />
         )}
       </div>

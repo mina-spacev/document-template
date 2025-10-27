@@ -1,4 +1,5 @@
 import { Article } from "./template";
+import { cleanInlineWhitespace } from "@/lib/whitespace";
 
 type Props = {
   code: string;
@@ -12,7 +13,7 @@ export const Example = ({ type = "article", code }: Props) => {
       <Article>
         <div
           className="prose max-w-none"
-          dangerouslySetInnerHTML={{ __html: code }}
+          dangerouslySetInnerHTML={{ __html: cleanInlineWhitespace(code) }}
         />
       </Article>
     </div>
@@ -23,7 +24,7 @@ export const Example = ({ type = "article", code }: Props) => {
     <div className="bg-white border rounded-lg p-4 @container mx-auto">
       <div
         className="prose max-w-none mx-auto"
-        dangerouslySetInnerHTML={{ __html: code }}
+        dangerouslySetInnerHTML={{ __html: cleanInlineWhitespace(code) }}
       />
     </div>
   );
