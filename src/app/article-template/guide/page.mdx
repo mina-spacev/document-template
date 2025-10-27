@@ -168,7 +168,7 @@
 기본적인 틀은 아래와 같습니다.
 
 ```tsx
-<article style="--highlight-color: #4e90f9;">
+<article class="article" style="--highlight-color: #4e90f9;">
   <header>
     <p class="highlight">{category}</p>
     <h1>{title}</h1>
@@ -202,10 +202,10 @@
 
 ```tsx
 /* 색상 코드 지정 */
-<article style="--highlight-color: #4e90f9;">
+<article class="article" style="--highlight-color: #4e90f9;">
 
 /* 컬러 토큰 활용 */
-<article style="--highlight-color: var(--color-blue-500);">
+<article class="article" style="--highlight-color: var(--color-blue-500);">
 ```
 
 - `article` 태그 안에는 `header`, `main`, `footer`를 순서대로 작성합니다.
