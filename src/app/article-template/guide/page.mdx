@@ -1,4 +1,3 @@
-
 # 템플릿 및 작성 가이드
 
 ## 템플릿
@@ -102,6 +101,80 @@
   </section>
 `, description: "목차와 섹션", }, ]} title="" />
 
+### 설명 리스트
+
+- 박스 내에서 용어, 명칭, 정의 등 무언가를 설명하고 싶을 때 사용합니다.
+
+```tsx
+/* 특수문자가 없는 버전 */
+<div class="box bg-blue-50">
+  <dl>
+    <dt>{title}</dt>
+    <dd>{description}</dd>
+  </dl>
+</div>
+```
+
+```tsx
+/* 특수문자가 있는 버전 */
+<div class="box bg-blue-50">
+  <dl class="list">
+    <dt>{title}</dt>
+    <dd>{description}</dd>
+  </dl>
+</div>
+```
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: `<div class="box bg-blue-50">
+    <dl>
+      <dt>고시원</dt>
+      <dd>
+        고시원 사업자가 등록되어 있는 경우에 해당하며, 고시텔 및 원룸텔을
+        포함합니다.
+      </dd>
+      <dt>게스트하우스</dt>
+      <dd>
+        게스트하우스는 숙박업에 해당하며, 게스트 하우스 사업자로 등록되어 있는
+        경우 선택해 주세요.
+      </dd>
+      <dt>쉐어하우스</dt>
+      <dd>
+        건물 유형과 상관 없이, 다른 사람들과 함께 사용하는 공용 공간과 개인의
+        독립된 공간이 모두 있는 경우 선택해 주세요.
+      </dd>
+    </dl>
+  </div>`,
+      description: '특수문자 X',
+    },
+    {
+      code: `<div class="box bg-blue-50">
+    <dl class="list">
+      <dt>고시원</dt>
+      <dd>
+        고시원 사업자가 등록되어 있는 경우에 해당하며, 고시텔 및 원룸텔을
+        포함합니다.
+      </dd>
+      <dt>게스트하우스</dt>
+      <dd>
+        게스트하우스는 숙박업에 해당하며, 게스트 하우스 사업자로 등록되어 있는
+        경우 선택해 주세요.
+      </dd>
+      <dt>쉐어하우스</dt>
+      <dd>
+        건물 유형과 상관 없이, 다른 사람들과 함께 사용하는 공용 공간과 개인의
+        독립된 공간이 모두 있는 경우 선택해 주세요.
+      </dd>
+    </dl>
+  </div>`,
+      description: '특수문자 O',
+    },
+  ]}
+  title=""
+/>
+
 ### Q&A
 
 - Q&A 형식으로 내용을 작성할 때 사용합니다.
@@ -126,7 +199,7 @@
       나와서 사이트를 접하게 됐습니다.
     </p>
   </div>`,
-      description: "Q&A",
+      description: 'Q&A',
     },
   ]}
   title=""

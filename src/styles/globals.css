@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @source inline("bg-{yellow,gray,blue,purple,green,red,orange}-{0,50,100,200,300,400,500,600,700,800,900}");
 @source inline("text-{yellow,gray,blue,purple,green,red,orange}-{0,50,100,200,300,400,500,600,700,800,900}");
 
@@ -351,6 +351,21 @@
 .box ul,
 .box ol {
   @apply mb-1!;
+}
+
+.box dt {
+  @apply mb-1 font-semibold;
+}
+
+.box dd {
+  @apply flex gap-1 not-last:mb-6;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: -0.1px;
+}
+
+.box dl.list dd {
+  @apply before:content-['•'];
 }
 
 .qna {
