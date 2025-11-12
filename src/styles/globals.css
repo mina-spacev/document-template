@@ -364,6 +364,10 @@
   letter-spacing: -0.1px;
 }
 
+.box dd + dd {
+  @apply -mt-5;
+}
+
 .box dl.list dd {
   @apply before:content-['•'];
 }
