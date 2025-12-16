@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { Article } from "./template";
-import { cleanInlineWhitespace } from "@/lib/whitespace";
+import { SanitizedContent } from "./sanitized-content";
+import { copy } from "@/lib/copy";
 
 type CodeExample = {
   code: string;
@@ -32,16 +33,14 @@ export const DynamicCodeBlock = ({
   const currentExample = examples[currentIndex];
 
   const copyToClipboard = async () => {
-    try {
-      await navigator.clipboard.writeText(currentExample.code);
+    const { success } = await copy(currentExample.code);
+    
+    if (success) {
       setCopied(true);
 
-      // 2초 후 복사 상태 초기화
       setTimeout(() => {
         setCopied(false);
       }, 2000);
-    } catch (err) {
-      console.error("복사 실패:", err);
     }
   };
 
@@ -118,16 +117,10 @@ export const DynamicCodeBlock = ({
         <h5 className="font-semibold mb-2">렌더링 결과:</h5>
         {type === "article" ? (
           <Article padding={padding} highlight={highlight}>
-            <div
-              className="prose max-w-none"
-              dangerouslySetInnerHTML={{ __html: cleanInlineWhitespace(currentExample.code) }}
-            />
+            <SanitizedContent html={currentExample.code} className="prose max-w-none" />
           </Article>
         ) : (
-          <div
-            className="prose max-w-none"
-            dangerouslySetInnerHTML={{ __html: cleanInlineWhitespace(currentExample.code) }}
-          />
+          <SanitizedContent html={currentExample.code} className="prose max-w-none event" />
         )}
       </div>
     </div>

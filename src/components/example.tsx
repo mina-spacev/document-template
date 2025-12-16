@@ -1,5 +1,5 @@
+import { SanitizedContent } from "./sanitized-content";
 import { Article } from "./template";
-import { cleanInlineWhitespace } from "@/lib/whitespace";
 
 type Props = {
   code: string;
@@ -11,10 +11,7 @@ export const Example = ({ type = "article", code }: Props) => {
     return (
       <div className="bg-white border rounded-lg p-4 @container">
       <Article>
-        <div
-          className="prose max-w-none"
-          dangerouslySetInnerHTML={{ __html: cleanInlineWhitespace(code) }}
-        />
+        <SanitizedContent html={code} className="prose max-w-none" />
       </Article>
     </div>
     )
@@ -22,10 +19,7 @@ export const Example = ({ type = "article", code }: Props) => {
 
   return (
     <div className="bg-white border rounded-lg p-4 @container mx-auto">
-      <div
-        className="prose max-w-none mx-auto"
-        dangerouslySetInnerHTML={{ __html: cleanInlineWhitespace(code) }}
-      />
+      <SanitizedContent html={code} className="prose max-w-none mx-auto" />
     </div>
   );
 };
