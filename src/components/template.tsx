@@ -4,11 +4,13 @@ import { CSSProperties, PropsWithChildren } from "react";
 type Props = {
   padding?: boolean;
   className?: string;
+  style?: CSSProperties;
 };
 
 export const Container = ({
   children,
   padding = false,
+  style,
   className,
 }: PropsWithChildren<Props>) => {
   return (
@@ -18,6 +20,7 @@ export const Container = ({
         !padding && "m-0!",
         className
       )}
+      style={style}
     >
       {children}
     </div>
@@ -50,6 +53,7 @@ export const Article = ({
 export const Box = ({
   children,
   padding = false,
+  style,
   className,
 }: PropsWithChildren<Props>) => {
   return (
@@ -59,6 +63,7 @@ export const Box = ({
         !padding && "m-0!",
         className
       )}
+      style={style}
     >
       {children}
     </div>

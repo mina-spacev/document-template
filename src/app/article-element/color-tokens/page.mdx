@@ -153,6 +153,24 @@
   <p className="text-[#004420]">텍스트</p>
 </Container>
 
+위의 방법이 동작하지 않을 경우 아래와 같은 방식을 사용합니다.
+
+```tsx
+/* 배경 색상 */
+<div class="box" style="background-color: #d2e2fc;">박스</div>;
+
+/* 텍스트 색상 */
+<p style="color: var(--color-green-900);">텍스트</p>;
+```
+<br/>
+
+<Container>
+  <Article>
+    <Box class="box w-full" style={{ backgroundColor: "#d2e2fc" }}>박스</Box>
+  </Article>
+  <p style={{ color: "var(--color-green-900)" }}>텍스트</p>
+</Container>
+
 ### 사용 팁
 
 - 배경색은 일반적으로 `bg-[color]-50` 컬러를 사용하면 적절합니다.
