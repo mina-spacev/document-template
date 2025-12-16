@@ -421,6 +421,10 @@
   @apply w-full;
 }
 
+.event img[data-copy-url] {
+  @apply cursor-pointer;
+}
+
 .fixed-banner {
   @apply fixed bottom-0 left-1/2 w-full -translate-x-1/2 z-50;
 }

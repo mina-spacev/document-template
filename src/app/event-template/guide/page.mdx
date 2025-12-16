@@ -122,6 +122,41 @@ import Image from "next/image";
 
 <Image src="/change-width.png" alt="width 속성 위치" width="600" height="300" />
 
+### URL 복사 기능
+
+특정 요소를 클릭 시 URL을 클립보드에 복사하며, 복사가 완료되었다는 팝업을 표시합니다.
+
+- `data-copy-url` : 복사 대상이 되는 링크를 입력합니다.
+- `data-copy-success` : (Optional) 복사 완료 팝업에 표시할 문구를 작성합니다. 기본값은 '주소가 복사되었습니다.'입니다.
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: `<img
+    src="https://d1pviohoskiraj.cloudfront.net/landing-html/83b1d71f-c9a3-425c-b976-0f57e8d97d02.png"
+    alt="삼삼엠투 주소 복사"
+    role="button"
+    aria-label="삼삼엠투 주소 복사하기"
+    data-copy-url="https://air.33m2.co.kr/qfyifn"
+  />`,
+      description: "기본 완료 문구",
+    },
+    {
+      code: `<img
+    src="https://d1pviohoskiraj.cloudfront.net/landing-html/83b1d71f-c9a3-425c-b976-0f57e8d97d02.png"
+    alt="삼삼엠투 주소 복사"
+    role="button"
+    aria-label="삼삼엠투 주소 복사하기"
+    data-copy-url="https://air.33m2.co.kr/qfyifn"
+    data-copy-success="삼삼엠투의 주소가 복사되었습니다."
+  />`,
+      description: "커스텀 완료 문구",
+    },
+  ]}
+  title=""
+  type="event"
+/>
+
 ## 작성 가이드
 
 기본적인 틀은 아래와 같습니다.
