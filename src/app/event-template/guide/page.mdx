@@ -49,6 +49,19 @@ import Image from "next/image";
   examples={[
     {
       code: `<div class="fixed-banner">
+    <div class="button">
+      <img
+        src="https://d1pviohoskiraj.cloudfront.net/landing-html/5e48fe44-f528-4d26-bf0c-d3472d5d69ba.png"
+        alt="상품권 받으러 가기 버튼"
+        data-copy-url="https://web.33m2.co.kr"
+      />
+      <span class="sr-only">상품권 받으러 가기</span>
+    </div>
+  </div>`,
+      description: "일반 배너",
+    },
+    {
+      code: `<div class="fixed-banner">
     <a
       href="https://tally.so/r/wdj1rK"
       class="link"
@@ -61,7 +74,7 @@ import Image from "next/image";
       <span class="sr-only">상품권 받으러 가기</span>
     </a>
   </div>`,
-      description: "배너",
+      description: "링크를 포함하는 배너",
     },
   ]}
   title=""
