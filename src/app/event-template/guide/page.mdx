@@ -170,6 +170,29 @@ import Image from "next/image";
   type="event"
 />
 
+### 팝업 기능
+
+특정 요소를 클릭 시 지정된 문구가 포함된 팝업을 표시합니다.
+
+- `data-popup` : 팝업에 표시할 문구를 작성합니다.
+
+<DynamicCodeBlock
+  examples={[
+    {
+      code: `<img
+    src="https://d1pviohoskiraj.cloudfront.net/landing-html/83b1d71f-c9a3-425c-b976-0f57e8d97d02.png"
+    alt="이미지 설명"
+    role="button"
+    aria-label="이미지 설명"
+    data-copy-url="팝업을 표시합니다"
+  />`,
+      description: "팝업 표시",
+    },
+  ]}
+  title=""
+  type="event"
+/>
+
 ## 작성 가이드
 
 기본적인 틀은 아래와 같습니다.

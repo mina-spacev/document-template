@@ -1,5 +1,5 @@
-export const COPY_URL = 'data-copy-url'
-export const COPY_SUCCESS = 'data-copy-success'
+import { POPUP_MESSAGE } from "../event/popup"
+import { COPY_SUCCESS, COPY_URL } from "../event/url-copy"
 
 export const FORBID_TAGS = [
   'script',
@@ -33,4 +33,5 @@ export const ADD_ATTR = [
   'title',
   COPY_URL,
   COPY_SUCCESS,
+  POPUP_MESSAGE,
 ]

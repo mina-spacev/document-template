@@ -2,9 +2,8 @@
 
 import { useEffect, useRef } from 'react'
 
-import { copy } from '../lib/copy'
-
-import { COPY_SUCCESS, COPY_URL } from '../lib/sanitize/option'
+import { copyURL, getSuccessMessage, getURL } from '@/lib/event/url-copy'
+import { getPopupMessage, showPopup } from '@/lib/event/popup'
 
 type Props = {
   className?: string
@@ -14,20 +13,6 @@ type Props = {
 export const SanitizedContent = ({ html, className }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null)
 
-  const copyURL = async ({
-    url,
-    successMessage,
-  }: {
-    url: string
-    successMessage: string
-  }) => {
-    const { success } = await copy(url)
-
-    if (success) {
-      alert(successMessage)
-    }
-  }
-
   useEffect(() => {
     const container = containerRef.current
     if (!container) return
@@ -35,12 +20,21 @@ export const SanitizedContent = ({ html, className }: Props) => {
     const handleImageClick = async (event: MouseEvent) => {
       const target = event.target as HTMLElement
 
-      const url = target.getAttribute(COPY_URL)
+      // URL 복사
+
+      const url = getURL(target)
 
       if (url) {
-        const successMessage =
-          target.getAttribute(COPY_SUCCESS) || '주소가 복사되었습니다.'
+        const successMessage = getSuccessMessage(target)
         await copyURL({ url, successMessage })
+      }
+
+      // Alert 표시
+
+      const popupMessage = getPopupMessage(target)
+
+      if (popupMessage) {
+        showPopup(popupMessage)
       }
     }
 
