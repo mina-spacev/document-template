@@ -421,10 +421,16 @@
   @apply w-full;
 }
 
+.event img[data-copy-url],
+.event img[data-popup] {
+  @apply cursor-pointer;
+}
+
 .fixed-banner {
   @apply fixed bottom-0 left-1/2 w-full -translate-x-1/2 z-50;
 }
 
+/* 고정 배너용 */
 .link,
 .button {
   @apply mx-auto flex w-fit justify-center cursor-pointer;
