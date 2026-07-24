@@ -1,6 +1,9 @@
 @import 'tailwindcss';
 @source inline("bg-{yellow,gray,blue,purple,green,red,orange}-{0,50,100,200,300,400,500,600,700,800,900}");
 @source inline("text-{yellow,gray,blue,purple,green,red,orange}-{0,50,100,200,300,400,500,600,700,800,900}");
+@source inline("border-{yellow,gray,blue,purple,green,red,orange}-{0,50,100,200,300,400,500,600,700,800,900}");
+@source inline("border");
+@source inline("text-{left,center,right}");
 
 @theme {
   /* Yellow */
@@ -312,6 +315,58 @@
   font-size: 14px;
   line-height: 22px;
   letter-spacing: -0.1px;
+}
+
+@layer components {
+  .article table {
+    @apply my-10 w-full text-left @max-[600px]:my-6;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-top: 1px solid var(--color-gray-900);
+    table-layout: auto;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -0.1px;
+  }
+
+  :where(.article th),
+  :where(.article td) {
+    @apply px-5 py-4 align-middle @max-[600px]:px-3 @max-[600px]:py-3;
+    border-right: 1px solid var(--table-border-color, var(--color-gray-100));
+    border-bottom: 1px solid var(--table-border-color, var(--color-gray-100));
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  :where(.article thead th) {
+    @apply font-semibold;
+    background-color: var(--table-header-bg, var(--color-blue-50));
+    color: var(--table-header-color, var(--color-gray-900));
+  }
+
+  :where(.article tbody th) {
+    @apply font-semibold;
+  }
+
+  :where(.article th[rowspan]),
+  :where(.article td[rowspan]) {
+    vertical-align: middle;
+  }
+
+  :where(.article tr[data-accent]),
+  :where(.article col[data-accent]) {
+    background-color: var(--table-accent-bg, var(--color-blue-50));
+  }
+
+  :where(.article tr > :last-child) {
+    border-right: 0;
+  }
+
+  .article th > :last-child,
+  .article td > :last-child {
+    @apply mb-0;
+  }
 }
 
 .highlight {
